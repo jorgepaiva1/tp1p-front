@@ -1,0 +1,93 @@
+html {
+    background-color: rgb(73, 72, 71);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 250px;
+    margin: auto;
+}
+
+.button {
+    font-size: inherit;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #385fe0;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    border-style:none;
+    margin: 10px 5px 10px 11px;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.action {
+    margin: 0 10px 0 0;
+}
+
+.button:hover {
+    background-color: #df5024;
+}
+
+div.tablecontainer {
+    margin: 10px 10px 0px 10px;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.table th {
+	background-color: #007BFF;
+	color: white;
+	font-weight: bold;
+	text-align: left;
+	padding: 10px;
+}
+
+.table td {
+	border: 1px solid #ddd;
+	padding: 10px;
+}
+
+.table tbody tr {
+	background-color: #f2f2f2;
+}
+
+html, body { height: 100%; }
+
+.table-filters {
+  display: flex;
+  padding: 10px;
+  align-items: flex-start;
+}
+
+.table-filters__item {
+  margin-right: 10px;
+}
