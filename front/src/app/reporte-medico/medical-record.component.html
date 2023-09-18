@@ -43,7 +43,7 @@
   </div>
 </div>
 <div class="tablecontainer">
-  <table class="table">
+  <table id="tableData" class="table" #tableData>
     <thead>
       <tr>
         <th>ID</th>
@@ -74,4 +74,6 @@
       </ng-template>
     </tbody>
   </table>
+  <button class="button" (click)="exportToExcel()">Exportar a Excel</button>
+ <button class="button" (click)="exportToPDF()">Exportar a PDF</button>
 </div>

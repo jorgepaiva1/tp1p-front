@@ -18,10 +18,10 @@ export class ReservationComponent implements OnInit {
   constructor(public dialog: MatDialog) {
     // Remove time date from tableFilters dates
     
-    this.tableFilters.dateFrom = new Date();
+    /*this.tableFilters.dateFrom = new Date();
     this.tableFilters.dateTo = new Date();
     this.tableFilters.dateFrom.setHours(0, 0, 0, 0);
-    this.tableFilters.dateTo.setHours(0, 0, 0, 0);
+    this.tableFilters.dateTo.setHours(0, 0, 0, 0);*/
   }
 
   ngOnInit(): void {
