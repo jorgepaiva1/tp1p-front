@@ -42,7 +42,7 @@ h1 {
     font-size: inherit;
     display: inline-block;
     padding: 10px 20px;
-    background-color: #385fe0;
+    background-color: #1e9ca8;
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -53,6 +53,7 @@ h1 {
 
 .button:hover {
     cursor: pointer;
+    background-color: #afa4a2;
 }
 
 .action {
@@ -60,7 +61,7 @@ h1 {
 }
 
 .button:hover {
-    background-color: #df5024;
+    background-color: #afa4a2;
 }
 
 div.tablecontainer {
@@ -76,7 +77,7 @@ div.tablecontainer {
 }
 
 .table th {
-	background-color: #007BFF;
+	background-color: #1e9ca8;
 	color: white;
 	font-weight: bold;
 	text-align: left;
