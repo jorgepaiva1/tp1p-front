@@ -2,6 +2,8 @@ header {
 	background-color: #34b680;
 	padding: 10px;
 	margin-right: auto;
+	display: flex;
+    flex-direction: row-reverse;
 }
 
 .button {

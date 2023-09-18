@@ -27,9 +27,14 @@ export class MedicalRecordComponent implements OnInit {
   }
   openCreateDialog(): void {
     const dialogRef = this.dialog.open(CreateRecordComponent, {
-      //TODO: arreglar dimension
-      width: '280px',
-      data: {} as MedicalRecord,
+      width: '380px',
+      data: {
+        availableDoctors: JSON.parse(localStorage.getItem('persons') ?? '[]').filter((person: any) => person.flag_is_doctor),
+        patients: JSON.parse(localStorage.getItem('persons') ?? '[]').filter((person: any) => !person.flag_is_doctor),
+        existingReservations: JSON.parse(localStorage.getItem('reservations') ?? '[]'),
+        allCategories: JSON.parse(localStorage.getItem('categories') ?? '[]'),
+        medicalRecord: {} as MedicalRecord,
+      },
     });
     dialogRef.afterClosed().subscribe((record) => {
       if (!record) return;
