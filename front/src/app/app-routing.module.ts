@@ -8,10 +8,10 @@ import { MedicalRecordComponent } from 'src/app/reporte-medico/medical-record.co
 import { ReservationComponent } from 'src/app/reservacion/reservations.component';
 
 const routes: Routes = [
-	{ path: 'persons', component: PersonsComponent },
-	{ path: 'categories', component: CategoriesComponent },
-	{ path: 'medical-records', component: MedicalRecordComponent },
-	{ path: 'reservations', component: ReservationComponent },
+	{ path: 'personas', component: PersonsComponent },
+	{ path: 'categoria', component: CategoriesComponent },
+	{ path: 'ficha-clinica', component: MedicalRecordComponent },
+	{ path: 'reservas', component: ReservationComponent },
 	{ path: '', component: HomeComponent },
 	{ path: '**', pathMatch: 'full', component: Page404Component },
 ];
