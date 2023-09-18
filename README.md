@@ -1,9 +1,15 @@
-# ---tp primer parcial front 2023---
+# ---TP Primer Parcial FrontEnd 2023---
 
-comandos...
+Comandos...
 
 # cd front
 
 # npm install
 
 # npm start
+
+# npm install xlsx
+
+# npm install jspdf
+
+
