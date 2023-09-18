@@ -40,7 +40,6 @@ export type MedicalRecord = {
   patient: Person;
   doctor: Person;
   date: Date;
-  reason: string;
   category: Category;
   diagnostic: string;
 }

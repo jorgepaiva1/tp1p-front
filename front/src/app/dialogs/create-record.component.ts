@@ -61,7 +61,7 @@ export class CreateRecordComponent {
   accept(): void {
     const medicalRecord = this.data.medicalRecord;
     
-    if (!medicalRecord.category || !medicalRecord.date || !medicalRecord.diagnostic || !medicalRecord.doctor || !medicalRecord.patient || !medicalRecord.reason) {
+    if (!medicalRecord.category || !medicalRecord.date || !medicalRecord.diagnostic || !medicalRecord.doctor || !medicalRecord.patient ) {
       alert('Datos Incorrectos. Por favor, complete todos los campos obligatorios.');
       return;
     }
@@ -100,7 +100,6 @@ export class CreateRecordComponent {
           id: matchingReservation.id,
           category: null as any,
           diagnostic: null as any,
-          reason: null as any,
          };
         this.data.medicalRecord = medicalRecord;
         
@@ -112,7 +111,6 @@ export class CreateRecordComponent {
           id: null as any,
           category: null as any,
           diagnostic: null as any,
-          reason: null as any,
         };
         this.data.medicalRecord = medicalRecord;
       }

@@ -51,7 +51,6 @@
         <th>Paciente</th>
         <th>Fecha</th>
         <th>Categoria</th>
-        <th>Motivo</th>
         <th>Diágnostico</th>
       </tr>
     </thead>
@@ -69,7 +68,6 @@
             <td>{{ record.patient.name + ' ' + record.patient.lastName }}</td>
             <td>{{ record.date | date : 'dd/MM/YYYY' }}</td>
             <td>{{ record.category.description }}</td>
-            <td>{{ record.reason }}</td>
             <td>{{ record.diagnostic }}</td>
           </tr>
         </ng-container>
