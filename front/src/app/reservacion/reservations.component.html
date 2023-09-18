@@ -61,7 +61,7 @@
             <td>{{ reservation.time.hours | number:'2.0' }}:{{ reservation.time.minutes | number:'2.0' }} - 
               {{ reservation.time.hours +1 | number:'2.0' }}:{{ reservation.time.minutes | number:'2.0' }}</td>
             <td>
-                <button style="background-color: red;" class="button action" (click)="delete(reservation)">
+                <button style="background-color: #cb0303;" class="button action button-cancelar" (click)="delete(reservation)">
                     <i class="fa-solid fa-times"></i> Cancelar
                 </button>
             </td>

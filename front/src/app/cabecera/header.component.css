@@ -1,9 +1,12 @@
 header {
-	background-color: #34b680;
+	background-color: rgb(158, 205, 247);
 	padding: 10px;
 	margin-right: auto;
+	display: flex;
+    flex-direction: row-reverse;
+	font-family: cursive;
 }
 
 .button {
-	margin-left: 0;
+	margin-left: 29px;
 }

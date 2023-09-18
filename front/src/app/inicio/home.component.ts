@@ -10,12 +10,12 @@ export class HomeComponent {
 	loadData(): void {
 		let persons: Person[] = [];
 		let categories: Category[] = [];
-		let person1 = new Person(1, 'John', 'Doe', '595123456789', 'asdf@example.com', '123456', false);
-		let person2 = new Person(2, 'Mary', 'Doe', '595321456789', 'qwer@example.com', '123457', true);
-    let person3 = new Person(3, 'Fernando', 'Smith', '595321456789', 'fer@example.com', '123456', false);
-    let person4 = new Person(4, 'Doctor', 'Gonzalez', '595321456789', 'doctor@example.com', '123456', true);
-		let category1 = new Category(1, 'Category 1');
-		let category2 = new Category(2, 'Category 2');
+		let person1 = new Person(1, 'Sole', 'Decoud', '595982398838', 'sole@gmail.com', '4673829', true);
+		let person2 = new Person(2, 'Jorge', 'Paiva', '59584979383', 'jorge@gmail.com', '5647827', true);
+    let person3 = new Person(3, 'Emmanuel', 'Gonzalez', '59592039829', 'ema@gmail.com', '4376287', false);
+    let person4 = new Person(4, 'Maria', 'Gonzalez', '595764837', 'maria@gmail.com', '64839283', false);
+		let category1 = new Category(1, 'Categoria 1');
+		let category2 = new Category(2, 'Categoria 2');
 		persons.push(person1);
 		persons.push(person2);
     persons.push(person3);
@@ -28,17 +28,15 @@ export class HomeComponent {
         patient: person1,
         doctor: person2,
         date: new Date(),
-        diagnostic: 'diagnostic',
-        reason: 'reason',
+        diagnostic: 'Bronquitis',
         id: 1,
       },
       {
         category: category2,
         patient: person3,
         doctor: person4,
-        date: new Date("2023-09-01 00:00:00"),
-        diagnostic: 'diagnostic 123',
-        reason: 'reason 123',
+        date: new Date("2023-09-02 00:00:00"),
+        diagnostic: 'Gripe',
         id: 2,
       },
     ];
@@ -46,7 +44,7 @@ export class HomeComponent {
       {
         patient: person1,
         doctor: person2,
-        date: new Date("2023-09-01 00:00:00"),
+        date: new Date("2023-09-02 00:00:00"),
         time: {hours: 10, minutes: 0} as Time,
         id: 1,
       },
