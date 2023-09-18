@@ -35,6 +35,12 @@ export class Person {
 	}
 }
 
+export type PersonFilter = {
+	name?: string;
+	lastName?: string;
+	flag_is_doctor?: string;
+}
+
 export type MedicalRecord = {
   id: number;
   patient: Person;

@@ -31,13 +31,13 @@ export class MedicalRecordComponent implements OnInit {
   }
   openCreateDialog(): void {
     const dialogRef = this.dialog.open(CreateRecordComponent, {
-      width: '380px',
+      width: '400px',
       data: {
-        availableDoctors: JSON.parse(localStorage.getItem('persons') ?? '[]').filter((person: any) => person.flag_is_doctor),
-        patients: JSON.parse(localStorage.getItem('persons') ?? '[]').filter((person: any) => !person.flag_is_doctor),
         existingReservations: JSON.parse(localStorage.getItem('reservations') ?? '[]'),
         allCategories: JSON.parse(localStorage.getItem('categories') ?? '[]'),
         medicalRecord: {} as MedicalRecord,
+        availableDoctors: JSON.parse(localStorage.getItem('persons') ?? '[]').filter((person: any) => person.flag_is_doctor),
+        patients: JSON.parse(localStorage.getItem('persons') ?? '[]').filter((person: any) => !person.flag_is_doctor),
       },
     });
     dialogRef.afterClosed().subscribe((record) => {
@@ -135,5 +135,6 @@ export class MedicalRecordComponent implements OnInit {
       console.error("this.table es nulo");
     }
   }
+
 
 }

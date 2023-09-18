@@ -4,6 +4,18 @@
 <div mat-dialog-actions>
     <div>
     <mat-form-field>
+      <mat-label>Fecha</mat-label>
+      <input matInput id="date_select" [(ngModel)]="data.medicalRecord.date" [matDatepicker]="picker" placeholder="Seleccionar fecha">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Categoria</mat-label>
+      <mat-select id="category_select" [(ngModel)]="data.medicalRecord.category" placeholder="Seleccionar categoria">
+        <mat-option *ngFor="let category of data.allCategories" [value]="category">{{category.description}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
       <mat-label>Paciente</mat-label>
       <mat-select id="patient_select" [(ngModel)]="data.medicalRecord.patient" [compareWith]="comparePacients" placeholder="Seleccionar paciente" (selectionChange)="fillMedicalRecord()">
         <mat-option *ngFor="let patient of data.patients" [value]="patient">{{patient.name}} {{patient.lastName}}</mat-option>
@@ -17,18 +29,7 @@
       </mat-select>
     </mat-form-field>
     
-    <mat-form-field>
-      <mat-label>Fecha</mat-label>
-      <input matInput id="date_select" [(ngModel)]="data.medicalRecord.date" [matDatepicker]="picker" placeholder="Seleccionar fecha">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Categoria</mat-label>
-      <mat-select id="category_select" [(ngModel)]="data.medicalRecord.category" placeholder="Seleccionar categoria">
-        <mat-option *ngFor="let category of data.allCategories" [value]="category">{{category.description}}</mat-option>
-      </mat-select>
-    </mat-form-field>
+    
     <mat-form-field>
       <mat-label>Diagnostico</mat-label>
       <input matInput id="diagnosis_input" [(ngModel)]="data.medicalRecord.diagnostic" placeholder="">

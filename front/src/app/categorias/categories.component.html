@@ -22,10 +22,10 @@
                 <tr *ngFor="let category of availableCategories">
                     <td>{{category.description}}</td>
                     <td>
-                        <button class="button action" (click)="openEditDialog(category)">
+                        <button class="button action" (click)="openEditDialog(category)" style="background-color: rgb(10, 92, 24); color: white;">
                             <i class="fa-solid fa-pencil"></i> Editar
                         </button>
-                        <button class="button action" (click)="delete(category)">
+                        <button class="button action" (click)="delete(category)" style="background-color: red; color: white;">
                             <i class="fa-solid fa-trash"></i> Borrar
                         </button>
                     </td>

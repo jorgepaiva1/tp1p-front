@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Person } from '../models';
+import { Person, PersonFilter } from '../models';
 import { MatDialog } from '@angular/material/dialog';
 import { CreatePersonComponent } from '../dialogs/create-person.component';
 
@@ -9,8 +9,10 @@ import { CreatePersonComponent } from '../dialogs/create-person.component';
 })
 export class PersonsComponent implements OnInit {
 	allPersons: Person[] = [];
-	availablePersons: Person[] = [];
+	filteredPersons: Person[] = [];
 	dialogPerson!: Person;
+	personFilters: PersonFilter = { flag_is_doctor: "everyone" };
+
 
 	constructor(public dialog: MatDialog) { }
 
@@ -31,7 +33,7 @@ export class PersonsComponent implements OnInit {
 				this.refreshList();
 				this.dialogPerson.id = this.allPersons.length + 1;
 				this.allPersons.push(this.dialogPerson);
-				this.availablePersons.push(this.dialogPerson);
+				this.filteredPersons.push(this.dialogPerson);
 				this.save();
 			}
 		});
@@ -48,7 +50,7 @@ export class PersonsComponent implements OnInit {
 				let id = result.id - 1;
 				this.dialogPerson = result;
 				this.allPersons[id] = this.dialogPerson;
-				this.availablePersons[id] = this.dialogPerson;
+				this.filteredPersons[id] = this.dialogPerson;
 				this.save();
 				this.refreshList();
 			}
@@ -67,9 +69,33 @@ export class PersonsComponent implements OnInit {
 		let personsString = localStorage.getItem('persons');
 		if (personsString) {
 			this.allPersons = JSON.parse(personsString);
-			this.availablePersons = this.allPersons.filter(person => person.id > 0);
+			this.filteredPersons = this.allPersons.filter(person => person.id > 0);
 		}
 	}
+
+	filter(): void {
+		this.filteredPersons = this.allPersons;
+		if (this.personFilters.name) {
+			let a = this.personFilters.name.toLowerCase();
+			this.filteredPersons = this.filteredPersons.filter(person => person.name.toLowerCase().includes(a));
+		}
+		if (this.personFilters.lastName) {
+			let a = this.personFilters.lastName.toLowerCase();
+			this.filteredPersons = this.filteredPersons.filter(person => person.lastName.toLowerCase().includes(a));
+		}
+		if (this.personFilters.flag_is_doctor === "doctors") {
+			this.filteredPersons = this.filteredPersons.filter(person => person.flag_is_doctor);
+		}
+		else if (this.personFilters.flag_is_doctor === "patients") {
+			this.filteredPersons = this.filteredPersons.filter(person => !person.flag_is_doctor);
+		}
+		this.filteredPersons = this.filteredPersons.filter(person => person.id > 0);
+	}
+
+	clearFilters() {
+		this.personFilters = { flag_is_doctor: "everyone" };
+		this.filter();
+	  }
 
 	save(): void {
 		localStorage.setItem('persons', JSON.stringify(this.allPersons));

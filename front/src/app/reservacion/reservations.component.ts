@@ -18,10 +18,10 @@ export class ReservationComponent implements OnInit {
   constructor(public dialog: MatDialog) {
     // Remove time date from tableFilters dates
     
-    /*this.tableFilters.dateFrom = new Date();
+    this.tableFilters.dateFrom = new Date();
     this.tableFilters.dateTo = new Date();
     this.tableFilters.dateFrom.setHours(0, 0, 0, 0);
-    this.tableFilters.dateTo.setHours(0, 0, 0, 0);*/
+    this.tableFilters.dateTo.setHours(0, 0, 0, 0);
   }
 
   ngOnInit(): void {
@@ -31,11 +31,9 @@ export class ReservationComponent implements OnInit {
 
   openCreateDialog(): void {
     const dialogRef = this.dialog.open(CreateReservationComponent, {
-      width: '380px',
+      width: '400px',
       data: {
         reservation: {} as Reservation,
-        availableDoctors: JSON.parse(localStorage.getItem('persons') ?? '[]').filter((person: any) => person.flag_is_doctor),
-        patients: JSON.parse(localStorage.getItem('persons') ?? '[]').filter((person: any) => !person.flag_is_doctor),
         availableTimes: [
           {hours: 9, minutes: 0},
           {hours: 10, minutes: 0},
@@ -50,6 +48,8 @@ export class ReservationComponent implements OnInit {
           {hours: 19, minutes: 0},
           {hours: 20, minutes: 0},
         ] as Time[],
+        availableDoctors: JSON.parse(localStorage.getItem('persons') ?? '[]').filter((person: any) => person.flag_is_doctor),
+        patients: JSON.parse(localStorage.getItem('persons') ?? '[]').filter((person: any) => !person.flag_is_doctor),
         existingReservations: this.allReservation,
       },
     });

@@ -1,9 +1,27 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<button class="button" (click)="openCreateDialog()">
-    Crear
+<button class="button" (click)="openCreateDialog()">Crear</button>
+
+<button disabled="disabled" style ="display: flex; align-items: flex-start; overflow-x: auto;">
+    <div class="table-filters">
+        <div class="table-filters">
+            <mat-form-field class="table-filters__item">
+                <mat-label>Nombre</mat-label>
+                <input matInput [(ngModel)]="personFilters.name">
+            </mat-form-field>
+            <mat-form-field class="table-filters__item">
+                <mat-label>Apellido</mat-label>
+                <input matInput [(ngModel)]="personFilters.lastName">
+            </mat-form-field>
+            <div>
+            <button class="button" (click)="filter()">Filtrar</button>
+            <button class="button" (click)="clearFilters()">Limpiar</button>
+            </div>
+        </div>
+    </div>
 </button>
+
 <div class="tablecontainer">
     <table class="table">
         <thead>
@@ -19,13 +37,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngIf="availablePersons.length == 0; else table_data">
+            <tr *ngIf="filteredPersons.length == 0; else table_data">
                 <td colspan="8" style="text-align: center">
                     No hay personas registradas
                 </td>
             </tr>
             <ng-template #table_data>
-                <ng-container *ngFor="let person of availablePersons">
+                <ng-container *ngFor="let person of filteredPersons">
                     <tr *ngIf="person.id !== -1">
                         <td>{{person.id}}</td>
                         <td>{{person.name}}</td>
@@ -35,11 +53,11 @@
                         <td>{{person.cedula}}</td>
                         <td>{{person.flag_is_doctor}}</td>
                         <td>
-                            <button class="button action" (click)="openEditDialog(person)">
-                                <i class="fa-solid fa-pencil"></i> Editar
+                            <button class="button action" (click)="openEditDialog(person)" style="background-color: rgb(10, 92, 24); color: white;">
+                                <i class="fa-solid fa-pencil-alt"></i> Editar
                             </button>
-                            <button class="button action" (click)="delete(person)">
-                                <i class="fa-solid fa-trash"></i> Borrar
+                            <button class="button action" (click)="delete(person)" style="background-color: red; color: white;">
+                                <i class="fa-solid fa-trash-alt"></i> Borrar
                             </button>
                         </td>
                     </tr>
