@@ -1,5 +1,8 @@
 html {
     background-color: rgb(73, 72, 71);
+    background-image: url(assets/sanatorio.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 body {
@@ -11,6 +14,9 @@ body {
 .container {
     text-align: center;
     margin-top: 100px;
+    background-image: url(assets/sanatorio2.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1 {
@@ -20,10 +26,11 @@ h1 {
 
 .buttons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
-    width: 250px;
-    margin: auto;
+    width: auto;
+    margin: -170px 10px 10px 300px;
+    list-style-type: none;
 }
 
 .button {
